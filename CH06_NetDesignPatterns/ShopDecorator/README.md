@@ -1,4 +1,4 @@
 # ShopDecorator
 
-!\[](./ShopDecorator.png)
+!\[Shop Decorator](ShopDecorator.png)
 
