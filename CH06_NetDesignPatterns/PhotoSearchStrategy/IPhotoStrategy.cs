@@ -1,7 +1,7 @@
-﻿namespace PhotoSearchStrategy
+﻿
+public interface IPhotoStrategy
 {
-    internal interface IPhotoStrategy
-    { 
-        public List<string> FindPhotos(string category);
-    }
+    string Name { get; }
+
+    Task<List<string>> SearchAsync(string query);
 }

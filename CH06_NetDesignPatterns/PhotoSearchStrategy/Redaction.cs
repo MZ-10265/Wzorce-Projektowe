@@ -1,22 +1,15 @@
-﻿namespace PhotoSearchStrategy
+﻿public sealed class Redaction : IPhotoStrategy
 {
-    internal class Redaction
+    public string Name => "Redaction (top 2 from Pixabay)";
+
+    public async Task<List<string>> SearchAsync(string query)
     {
-        private IPhotoStrategy _strategy;
+        var baseStrategy = new Pixabay();
+        var results = await baseStrategy.SearchAsync(query);
 
-        internal List<string> FindPhotos(string category)
-        {
-            var list = new List<string>();  
-            if (_strategy != null) 
-            {
-               list = _strategy.FindPhotos(category);
-            }
-            return list;
-        }
+        if (results.Count == 1 && results[0].StartsWith("Brak "))
+            return results;
 
-        internal void SetStrategy(IPhotoStrategy strategy)
-        {
-            _strategy = strategy;
-        }
+        return results.Take(2).ToList();
     }
 }

@@ -1,16 +1,31 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Text.Json;
 
-namespace PhotoSearchStrategy
+public sealed class Pixabay : IPhotoStrategy
 {
-    internal class Pixabay : IPhotoStrategy
+    public string Name => "Pixabay";
+
+    public async Task<List<string>> SearchAsync(string query)
     {
-        public List<string> FindPhotos(string category)
+        if (string.IsNullOrWhiteSpace(ApiKeys.Pixabay))
+            return new List<string> { "Brak klucza Pixabay API." };
+
+        using var http = new HttpClient();
+
+        var url =
+            $"https://pixabay.com/api/?key={ApiKeys.Pixabay}" +
+            $"&q={Uri.EscapeDataString(query)}&image_type=photo&per_page=5";
+
+        var json = await http.GetStringAsync(url);
+
+        using var doc = JsonDocument.Parse(json);
+        var results = new List<string>();
+
+        foreach (var hit in doc.RootElement.GetProperty("hits").EnumerateArray())
         {
-            return new List<string>() { "kotek2", "piesek2", "kurka2" };
+            if (hit.TryGetProperty("largeImageURL", out var large))
+                results.Add(large.GetString() ?? "");
         }
+
+        return results;
     }
 }
