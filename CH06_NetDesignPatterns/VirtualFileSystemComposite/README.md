@@ -1,3 +1,9 @@
 # Virtual File System Composite	
 
-![VirtualFileSystemComposite](https://github.com/MZ-10265/Wzorce-Projektowe/tree/main/CH06_NetDesignPatterns/VirtualFileSystemComposite/VirtualFileSystemComposite.png)
+
+## Opis
+- `INode` – wspólny interfejs dla plików i folderów  
+- `FileNode` – liœæ (plik, bez dzieci)  
+- `FolderNode` – kompozyt (folder zawieraj¹cy inne elementy)
+
+Folder oblicza swój rozmiar jako sumê rozmiarów wszystkich dzieci (przy u¿yciu rekurencji).
