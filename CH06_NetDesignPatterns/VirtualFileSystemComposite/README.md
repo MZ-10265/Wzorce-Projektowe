@@ -6,4 +6,4 @@
 - `FileNode` – liœæ (plik, bez dzieci)  
 - `FolderNode` – kompozyt (folder zawieraj¹cy inne elementy)
 
-Folder oblicza swój rozmiar jako sumê rozmiarów wszystkich dzieci (przy u¿yciu rekurencji).
+Folder oblicza swój rozmiar jako sume rozmiarów wszystkich dzieci (przy uzyciu rekurencji)
