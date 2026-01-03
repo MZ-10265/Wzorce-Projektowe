@@ -1,25 +1,25 @@
-﻿01 Long Parameter List				ZROBIONE
-02 Duplicated Code				ZROBIONE
-03 Message Chains				ZROBIONE
-04 Refused Bequest				ZROBIONE
-05 Temporary Fields				ZROBIONE
-06 Data Clumps					ZROBIONE
-07 Inappropriate Intimacy			ZROBIONE
-08 Long Message Chain				ZROBIONE
-09 Divergent Change				ZROBIONE
-10 Parallel Inheritance Hierarchies		ZROBIONE
-11 Feature Envy					ZROBIONE
-12 God Class					ZROBIONE
-13 Switch Statements				ZROBIONE
-14 Large Class					ZROBIONE
-15 Primitive Obsession				ZROBIONE
-16 Data Class					ZROBIONE
-17 Comments					ZROBIONE
-18 Middle Man					ZROBIONE
-19 Long Method					ZROBIONE
-20 Speculative Generality			ZROBIONE
-21 Lazy Class					ZROBIONE
-22 Shotgun Surgery				ZROBIONE
+﻿01. Long Parameter List				ZROBIONE
+02. Duplicated Code				ZROBIONE
+03. Message Chains				ZROBIONE
+04. Refused Bequest				ZROBIONE
+05. Temporary Fields				ZROBIONE
+06. Data Clumps					ZROBIONE
+07. Inappropriate Intimacy			ZROBIONE
+08. Long Message Chain				ZROBIONE
+09. Divergent Change				ZROBIONE
+10. Parallel Inheritance Hierarchies		ZROBIONE
+11. Feature Envy					ZROBIONE
+12. God Class					ZROBIONE
+13. Switch Statements				ZROBIONE
+14. Large Class					ZROBIONE
+15. Primitive Obsession				ZROBIONE
+16. Data Class					ZROBIONE
+17. Comments					ZROBIONE
+18. Middle Man					ZROBIONE
+19. Long Method					ZROBIONE
+20. Speculative Generality			ZROBIONE
+21. Lazy Class					ZROBIONE
+22. Shotgun Surgery				ZROBIONE
 
 
 
