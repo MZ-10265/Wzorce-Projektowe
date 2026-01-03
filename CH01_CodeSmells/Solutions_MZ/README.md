@@ -1,5 +1,11 @@
 # CodeSmells
 
+
+
+### **Wyniki potwierdzające działanie z terminala VS**
+
+
+
 ```cmd
 
 
