@@ -1,25 +1,38 @@
-﻿namespace TeacherObserver
-{
-    internal class Teacher
-    {
-        private List<Result> _results;
-        private List<Student> _students = new();
+﻿
 
-        internal void addObserver(Student student)
+public class Teacher
+{
+    private readonly List<Student> _students = new();
+
+    public void Subscribe(Student student)
+    {
+        if (!_students.Contains(student))
         {
-            _students.Add(student);  
+            _students.Add(student);
+            Console.WriteLine($"Student {student.Name} zostal zapisany.");
         }
-        internal void addResults(List<Result> results)
+    }
+
+    public void Unsubscribe(Student student)
+    {
+        if (_students.Remove(student))
         {
-            _results = results;
-            Notify();
+            Console.WriteLine($"Student {student.Name} zostal wypisany.");
         }
-        internal void Notify()
+    }
+
+    private void Notify(Result result)
+    {
+        foreach (var student in _students)
         {
-            foreach (var item in _students)
-            {
-                item.GetResult(_results.FirstOrDefault(s => s.Name == item.Name));
-            }
+            student.Update(result);
         }
+    }
+
+    public void PublishResult(string subject, string description)
+    {
+        Console.WriteLine($"\n[Nauczyciel] Publikuje informacje: {description}");
+        var result = new Result(subject, description);
+        Notify(result);
     }
 }

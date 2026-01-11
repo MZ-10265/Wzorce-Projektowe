@@ -9,8 +9,9 @@
 7. Adapter	ZROBIONE
 8. Bridge	ZROBIONE
 9. Dekorator	ZROBIONE
-10. Kompozyt
-11. Pyłek
-12. Command
-13. Observer
-14. PhotoSearchStrategy		ZROBIONE
+10. Kompozyt	ZROBIONE
+11. Pyłek	ZROBIONE
+12. Command	ZROBIONE
+13. Observer	ZROBIONE
+14. Strategy	ZROBIONE
+15. CodeSmells  ZROBIONE

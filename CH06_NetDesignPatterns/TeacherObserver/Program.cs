@@ -1,19 +1,21 @@
-﻿using TeacherObserver;
+﻿
+
+Console.WriteLine("Observer - Teacher/Student");
 
 var teacher = new Teacher();
-var grzegorz = new Student("Grzegorz");
-var pawel = new Student("Paweł");
-var jan = new Student("Jan");
+var student1 = new Student("Marek");
+var student2 = new Student("Mirek");
+var student3 = new Student("Miroslawa");
 
-teacher.addObserver(grzegorz);
-teacher.addObserver(pawel);
-teacher.addObserver(jan);
 
-var newResults = new List<Result>()
-    {
-        new Result(21, "Grzegorz"),
-        new Result(25, "Paweł"),
-        new Result(15, "Jan"),
-    };
+teacher.Subscribe(student1);
+teacher.Subscribe(student2);
+teacher.PublishResult("Programowanie", "Zadanie domowe nr 1");
+teacher.Subscribe(student3);
+teacher.PublishResult("Programowanie", "Zadanie domowe nr 2");
 
-teacher.addResults(newResults);
+teacher.Unsubscribe(student2);
+
+teacher.PublishResult("Programowanie", "Termin oddania: piatek");
+
+Console.WriteLine("\nKoniec programu.");

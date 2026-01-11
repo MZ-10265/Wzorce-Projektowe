@@ -1,13 +1,19 @@
-﻿namespace TeacherObserver
+﻿
+
+
+public class Result
 {
-    internal class Result
+    public string Subject { get; }
+    public string Description { get; }
+
+    public Result(string subject, string description)
     {
-        public int Score { get; set; }
-        public string Name { get; set;}
-        internal Result(int score, string name)
-        {
-            Score = score;
-            Name = name;
-        }
+        Subject = subject;
+        Description = description;
+    }
+
+    public override string ToString()
+    {
+        return $"Przedmiot: {Subject}, Informacja: {Description}";
     }
 }
